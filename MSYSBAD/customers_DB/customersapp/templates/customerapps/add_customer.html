@@ -1,0 +1,62 @@
+{% extends 'customerapps/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="flex-column" style="margin-left: 300px; width:700px;justify-content: center;">
+
+    <h1 style="text-align:center;"><b><strong>Add Customer</strong></b></h1>
+    
+    <br>
+    <div class="card">
+        
+        <form action="#" method="post">
+         
+        {% csrf_token %}
+                        
+        <div class="card-header">
+         
+        <h2>Type in Customer Details:</h2>
+        </div>
+            <div class="mx-4">
+
+            <br>
+         
+
+                <div class="d-flex flex-row my-4">
+                    <div class="d-flex flex-column flex-fill">
+                        <label for="Name">   Name:</label>
+                        <input class= "input100" name="Name" type="text" style="max-width:200px">
+                   
+                    </div>
+                    <div class="d-flex flex-column flex-fill">
+                        <label for="address">Address: </label>
+                        <input class= "input100" name="address" type="text" style="max-width:200px" >
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row my-4">
+                    <div class="d-flex flex-column flex-fill">
+                        <label for="contact_number"> Contact Number:</label>
+                        <input name="input100"type="contact_number" style="max-width:200px">
+                    </div>
+                    <div class="d-flex flex-column flex-fill" style="margin-left: 30px;">
+                        <label for="emailaddress"> Email Address: </label>
+                        <input name="input100" type="emailadrress" style="max-width:200px" >
+                    </div>
+                </div>
+
+                <a type="submit"><button class="btn btn-secondary my-4">Add Customer</button></a>
+                <a href="{% url 'view_customer' %}" ><button type="button" class="btn btn-outline-danger my-4">Cancel</button></a>
+                {% if message == message %}
+                <p name="message"> {{message}}</p>
+                {% elif message != message %}
+                <p name="message">An error occured.</p>
+                {% endif %}
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

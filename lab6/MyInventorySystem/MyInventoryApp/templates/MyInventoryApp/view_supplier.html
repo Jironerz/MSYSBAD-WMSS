@@ -1,0 +1,47 @@
+{% extends 'MyInventoryApp/base.html' %}
+{% load static %}
+
+                {% block content %}
+                <div class="col justify-content">
+                    <ul class="nav">
+                        <li class="nav-button">
+                            <a href="{% url 'add_bottle' %}" button type="button" class="btn btn-success">Add Water Bottles</a> </button>
+                            <br>
+                            <br>
+                                <a href="{% url 'manage_account' create.pk %}" button type="button" class="btn btn-success">Manage Account</a> </button>
+                                <br>
+                                <br>
+                                    <a href="{% url 'logout' %}" button type="button" class="btn btn-success">Logout </a>
+                                   </button>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <div class="col-10">
+                    <table >
+                        <thead>
+                            <th scope="col"> Suppliers </th>
+                            <th scope="col"> City </th>
+                            <th scope="col"> Country </th>
+                            <th scope="col"> Created at </th>
+                            <th scope="col"></th>
+                        </thead>
+                        <tbody>
+                            {% for supplier in suppliers %}
+                            <tr>
+                                <td> 
+                                    <a href="{% url 'view_bottles' create.pk %}">{{ supplier.name }}</a>
+                                </td>
+                                <td> {{ supplier.city }} </td>
+                                <td> {{ supplier.country }} </td>
+                                <td> {{ supplier.created_at }}</td>
+                             
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endblock %}
+               

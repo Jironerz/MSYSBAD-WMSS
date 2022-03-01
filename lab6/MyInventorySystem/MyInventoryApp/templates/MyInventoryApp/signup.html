@@ -1,0 +1,44 @@
+{% extends 'MyInventoryApp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="col-md-8">
+
+  <div class="card">
+      <div class="card-header">
+          <h2 class="card-title"> Signup Form:</h2>
+      </div>
+      <div class="card-body">
+
+        <form method="POST" action="">{% csrf_token %}
+            
+
+            <div class="form-group">
+              <label for="username"> Username: </label>
+              <br>
+              <input type="text" class="btn btn-success" id="username" name="username">
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                  <div class="form-group">
+                      <label for="password"> Password: </label>
+                      <br>
+                      <input type="password" class="btn btn-success" id="password" name="password">
+                  </div>
+              </div>
+            </div>
+            <button type="signup" class="btn btn-success">Signup</button>
+        </form>
+        
+      </div>
+      <div class="row">
+        <p style="margin-left: 30px; padding: 5px; color: rgba(51, 58, 45, 0.993);">{{message}}</p>
+      </div>
+  </div>
+  
+</div>
+{% endblock %}

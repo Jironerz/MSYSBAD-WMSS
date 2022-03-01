@@ -1,0 +1,72 @@
+{% extends 'customerapps/base.html' %}
+{% load static %}
+
+{% block navbar %}
+<div class="hi">
+    <nav>
+            <ul class="mcd-menu">
+                <li>
+                    <a href="">
+                        <i class="fa fa-home"></i>
+                        <strong>Home</strong>
+                        <small></small>
+                    </a>
+                </li>
+                <br>
+                <li>
+                    <a href="" >
+                        <i class="fas fa-bacon"></i>
+                        <strong>View Customers</strong>
+                        <small>Items List</small>
+                    </a>
+                    <ul>
+                        <li><a href=""><i class="fa fa-globe"></i>Add Food</a></li>
+
+                    </ul>
+                    <br>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa fa-cart-plus"></i>
+                        <strong>View Order</strong>
+                        <small>Add Order</small>
+                    </a>
+                    <ul>
+                        <li><a href=""><i class="fa fa-globe"></i>Add Order</a></li>
+
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <a href="">
+                        <i class="fa fa-users"></i>
+                        <strong>View Customers</strong>
+                        <small>Update Customers' Details</small>
+                    </a>
+                </li>
+                <br>
+                <li>
+                    <a href="">
+                        <i class="fa fa-user-circle"></i>
+                        <strong>My Account</strong>
+                        <small>Account</small>
+                    </a>
+                    <ul>
+                        <li>  
+                                <a href=""><i class="fa fa-group"></i>Manage Account</a>
+                            </li>
+                        
+                        
+                                <li><a href=""><i class="fa fa-globe"></i>Logout</a></li>
+                    </ul>
+                </li>
+                <br>
+                <br>
+                
+              
+            </ul>
+        </nav>
+
+    </div>
+    
+    {% endblock %} 

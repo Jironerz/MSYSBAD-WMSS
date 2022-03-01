@@ -1,0 +1,45 @@
+
+{% extends 'customerapps/base.html' %}
+{% load static %}
+
+                {% block content %}
+                <div class="col justify-content">
+                    <ul class="nav">
+                        <li class="nav-button">
+                            <a href="{% url 'add_customer' %}" button type="button" class="btn btn-success">Add Customer</a> </button>
+                            <br>
+                            <br>
+                               
+                                <br>
+                                <br>
+                                   
+                                   </button>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="col-10">
+                    <table >
+                        <thead>
+                            <th scope="col"> Customer Name</th>
+                            <th scope="col"> Address</th>
+                            <th scope="col"> Contact Numbber</th>
+                            <th scope="col"> Email Address</th>
+                            
+                   
+                        </thead>
+                        <tbody>
+                            {% for customer in customers %}
+                            <tr>
+                                <td> <b>{{customer.Name}}</b></td>
+                                <td> {{customer.address}}</td>
+                                <td> {{customer.contact_number}}</td>
+                                <td> {{customer.emailaddress}}</td>
+                                <td><a href="{% url 'update_customer' customer.pk %}"><button class="btn btn-dark my-2">Edit</button></a> </td>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endblock %}
